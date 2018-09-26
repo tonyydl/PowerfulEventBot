@@ -55,9 +55,38 @@ def callback():
 def handle_message(event):
     event_message = event.message.text.strip().split(' ')
     main_action = event_message[0]
+    if main_action == '!maroon5':
+        content = action_maroon5()
+        print(content)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
+
+
+def action_maroon5():
+    append_str = ''
+    append_str += action_maroon5_khc_concert() + "\n"
+    return append_str
+
+
+def action_maroon5_khc_concert():
+    the_title = '「魔力紅2019高雄演唱會」'
+    url = 'https://www.livenation.com.tw/show/1214331/maroon-5-red-pill-blues-tour-live-in-kaohsiung-%E9%AD%94%E5%8A%9B%E7%B4%852019%E9%AB%98%E9%9B%84%E6%BC%94%E5%94%B1%E6%9C%83/kaohsiung/2019-03-01/tw'
+    response = urllib.request.urlopen(url)
+    html = response.read()
+    soup = BeautifulSoup(html, 'html.parser')
+    eventtickets = soup.find('div', {'class': 'eventtickets--notickets'})
+    if eventtickets is None:
+        append_str = '{0}演唱會門票「可能」開始開賣了'.format(the_title)
+        print(append_str)
+    else:
+        append_str = '{0}演唱會門票目前尚未開賣'.format(the_title)
+        print(eventtickets)
+    return append_str
 
 
 if __name__ == "__main__":
