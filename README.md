@@ -1,5 +1,7 @@
 # 活動即時通
 
+[![codebeat badge](https://codebeat.co/badges/46af1b4f-b322-43fc-a979-7a26a051f32e)](https://codebeat.co/projects/github-com-tonyyang924-powerfuleventbot-master)
+
 <img src="./screenshot/cover.png" />
 
 <img src="http://qr-official.line.me/L/F9sTTBc9vi.png">
