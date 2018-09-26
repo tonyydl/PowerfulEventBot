@@ -6,6 +6,7 @@ import urllib.parse
 
 from bs4 import BeautifulSoup
 from flask import Flask, request, abort
+from enum import Enum
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -33,6 +34,10 @@ handler = WebhookHandler(channel_secret)
 app = Flask(__name__)
 
 
+class ActionType(Enum):
+    MAROON5 = '!maroon5'
+
+
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -53,9 +58,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    event_message = event.message.text.strip().split(' ')
-    main_action = event_message[0]
-    if main_action == '!maroon5':
+    main_action = event.message.text.strip()
+    print('main_action:{0}\nActionType.MAROON5:{1}'.format(main_action, ActionType.MAROON5))
+    if main_action == ActionType.MAROON5.value:
         content = action_maroon5()
         print(content)
         line_bot_api.reply_message(
@@ -64,7 +69,7 @@ def handle_message(event):
         return 0
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text='系統無法分辨{0}指令，\n請輸入指令：{1}'.format(main_action, ActionType.MAROON5.value)))
 
 
 def action_maroon5():
