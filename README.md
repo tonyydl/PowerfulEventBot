@@ -4,7 +4,7 @@
 
 <img src="./screenshot/cover.png" />
 
-<img src="http://qr-official.line.me/L/F9sTTBc9vi.png">
+<img src="./screenshot/qrcode.png">
 
 <a href="https://line.me/R/ti/p/%40ubl3974i">https://line.me/R/ti/p/%40ubl3974i</a>
 
