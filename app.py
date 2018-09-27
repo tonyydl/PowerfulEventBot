@@ -86,10 +86,10 @@ def action_maroon5_khc_concert():
     soup = BeautifulSoup(html, 'html.parser')
     eventtickets = soup.find('div', {'class': 'eventtickets--notickets'})
     if eventtickets is None:
-        append_str = '{0}演唱會門票「可能」開始開賣了'.format(the_title)
+        append_str = '{0}演唱會門票「可能」開始開賣了\n請前往{1}'.format(the_title, url)
         print(append_str)
     else:
-        append_str = '{0}演唱會門票目前尚未開賣'.format(the_title)
+        append_str = '{0}演唱會門票目前尚未開賣\n{1}'.format(the_title, url)
         print(eventtickets)
     return append_str
 
