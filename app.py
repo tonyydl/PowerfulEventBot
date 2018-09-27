@@ -59,7 +59,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     main_action = event.message.text.strip()
-    print('main_action:{0}\nActionType.MAROON5:{1}'.format(main_action, ActionType.MAROON5))
+    print('main_action:{0}\nActionType.MAROON5:{1}'.format(
+        main_action, ActionType.MAROON5))
     if main_action == ActionType.MAROON5.value:
         content = action_maroon5()
         print(content)
@@ -67,9 +68,6 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text='系統無法分辨{0}指令，\n請輸入指令：{1}'.format(main_action, ActionType.MAROON5.value)))
 
 
 def action_maroon5():
