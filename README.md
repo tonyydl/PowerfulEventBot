@@ -1,6 +1,6 @@
 # 活動即時通
 
-[![codebeat badge](https://codebeat.co/badges/46af1b4f-b322-43fc-a979-7a26a051f32e)](https://codebeat.co/projects/github-com-tonyyang924-powerfuleventbot-master)
+[![codebeat badge](https://codebeat.co/badges/59a62e2a-8a00-4922-bcc8-39c958681d42)](https://codebeat.co/projects/github-com-tonyyang924-powerfuleventbot-master)
 
 <img src="./screenshot/cover.png" />
 
