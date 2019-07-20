@@ -18,3 +18,5 @@ Maroon 5 所有活動
 </pre>
 
 <img src="./screenshot/event_maroon5.png" />
+
+<img src="./screenshot/event_maroon5_02.png" />
