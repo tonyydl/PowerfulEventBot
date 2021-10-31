@@ -1,7 +1,5 @@
 # 活動即時通
 
-[![codebeat badge](https://codebeat.co/badges/59a62e2a-8a00-4922-bcc8-39c958681d42)](https://codebeat.co/projects/github-com-tonyyang924-powerfuleventbot-master)
-
 <img src="./screenshot/cover.png" />
 
 <img src="./screenshot/qrcode.png">
@@ -19,4 +17,4 @@ Maroon 5 所有活動
 
 <img src="./screenshot/event_maroon5.png" />
 
-<img src="./screenshot/event_maroon5_02.png" />
+<img src="./screenshot/event_maroon5_02.png" height="600" />
